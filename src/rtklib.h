@@ -527,8 +527,8 @@ extern "C" {
 #define thread_t    pthread_t
 #define lock_t      pthread_mutex_t
 #define initlock(f) pthread_mutex_init(f,NULL)
-#define lock(f)     pthread_mutex_lock(f)
-#define unlock(f)   pthread_mutex_unlock(f)
+#define rtkliblock(f)     pthread_mutex_lock(f)
+#define rtklibunlock(f)   pthread_mutex_unlock(f)
 #define FILEPATHSEP '/'
 #endif
 
