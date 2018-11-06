@@ -240,7 +240,7 @@ static int inputobs(obsd_t *obs, int solq, const prcopt_t *popt)
     gtime_t time={0};
     int i,nu,nr,n=0;
     
-    trace(3,"infunc  : revs=%d iobsu=%d iobsr=%d isbs=%d\n",revs,iobsu,iobsr,isbs);
+    trace(3,"\ninfunc  : revs=%d iobsu=%d iobsr=%d isbs=%d\n",revs,iobsu,iobsr,isbs);
     
     if (0<=iobsu&&iobsu<obss.n) {
         settime((time=obss.data[iobsu].time));
@@ -259,7 +259,7 @@ static int inputobs(obsd_t *obs, int solq, const prcopt_t *popt)
                 if (timediff(obss.data[i].time,obss.data[iobsu].time)>DTTOL) break;
         }
         nr=nextobsf(&obss,&iobsr,2);
-        if (nr<=0) {    /* remove this for event logging??? */
+        if (nr<=0) {
             nr=nextobsf(&obss,&iobsr,2);
         }
         for (i=0;i<nu&&n<MAXOBS*2;i++) obs[n++]=obss.data[iobsu+i];
